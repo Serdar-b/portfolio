@@ -4,6 +4,7 @@ import { TextGenerateEffect } from "./ui/TestGenerateEffect";
 import ShimmerButton from "./ui/ShimmerButton";
 import { FaBriefcase } from "react-icons/fa";
 import { ShootingStars } from "./ui/ShootingStars";
+import Image from "next/image";
 const HeroSection = () => {
   return (
     <div className="pb-20 pt-20">
@@ -25,17 +26,27 @@ const HeroSection = () => {
             className=" text-center text-[40px] md:text-5xl lg:text-6xl "
             words="Bringing Ideas to life with impact"
           />
-
           <p className="text-center max-w-md md:max-w-md md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl opacity-80">
             Hi, I&apos;m Serdar, a developer based in Sweden with a passion for
             turning innovative ideas into reality.
           </p>
+          <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg">
+            <Image
+              className="object-cover translate-y-[-15px]"
+              src="/profile.jpg"
+              width={192}
+              height={192}
+              alt="Selfie"
+            />
+          </div>
 
-          <ShimmerButton
-            title="My Work"
-            icon={<FaBriefcase />}
-            position="right"
-          />
+          <a href="#about">
+            <ShimmerButton
+              title="My Work"
+              icon={<FaBriefcase />}
+              position="right"
+            />
+          </a>
         </div>
       </div>
     </div>
