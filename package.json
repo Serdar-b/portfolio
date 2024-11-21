@@ -14,6 +14,11 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
+    "@fortawesome/free-regular-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@tabler/icons-react": "^3.22.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
