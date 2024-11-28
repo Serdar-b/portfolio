@@ -26,6 +26,8 @@ export default {
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
+        "move-left-anim": "move-left-anim 1s linear infinite",
+        "move-right-anim": "move-right-anim 1s linear infinite",
       },
       keyframes: {
         shimmer: {
@@ -34,6 +36,22 @@ export default {
           },
           to: {
             backgroundPosition: "-200% 0",
+          },
+        },
+        "move-right-anim": {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translateX(0%) ",
+          },
+        },
+        "move-left-anim": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-50%) ",
           },
         },
       },
