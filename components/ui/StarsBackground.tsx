@@ -8,12 +8,15 @@ import React, {
   useCallback,
 } from "react";
 
+
 interface StarProps {
   x: number;
   y: number;
   radius: number;
   opacity: number;
   twinkleSpeed: number | null;
+  xVelocity: number;
+  yVelocity: number;
 }
 
 interface StarBackgroundProps {
@@ -26,11 +29,11 @@ interface StarBackgroundProps {
 }
 
 export const StarsBackground: React.FC<StarBackgroundProps> = ({
-  starDensity = 0.00015,
+  starDensity = 0.00005,
   allStarsTwinkle = true,
   twinkleProbability = 0.7,
-  minTwinkleSpeed = 0.5,
-  maxTwinkleSpeed = 1,
+  minTwinkleSpeed = 1,
+  maxTwinkleSpeed = 2,
   className,
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
@@ -41,20 +44,36 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     (width: number, height: number): StarProps[] => {
       const area = width * height;
       const numStars = Math.floor(area * starDensity);
-      return Array.from({ length: numStars }, () => {
+      const starsArray: StarProps[] = [];
+
+      for (let i = 0; i < numStars; i++) {
         const shouldTwinkle =
           allStarsTwinkle || Math.random() < twinkleProbability;
-        return {
-          x: Math.random() * width,
-          y: Math.random() * height,
-          radius: Math.random() * 0.05 + 0.5,
+
+        // Initialize stars anywhere on the screen
+        const x = Math.random() * width;
+        const y = Math.random() * height;
+
+        // Small random velocities (to the right and upwards)
+        // xVelocity > 0 moves right, yVelocity < 0 moves upwards
+        const xVelocity = 0.3;
+        const yVelocity = -0.3;
+
+        starsArray.push({
+          x,
+          y,
+          radius: Math.random() * 0.6 + 0.3,
           opacity: Math.random() * 0.5 + 0.5,
           twinkleSpeed: shouldTwinkle
             ? minTwinkleSpeed +
               Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
             : null,
-        };
-      });
+          xVelocity,
+          yVelocity,
+        });
+      }
+
+      return starsArray;
     },
     [
       starDensity,
@@ -69,9 +88,6 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     const updateStars = () => {
       if (canvasRef.current) {
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
-
         const { width, height } = canvas.getBoundingClientRect();
         canvas.width = width;
         canvas.height = height;
@@ -110,19 +126,37 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     let animationFrameId: number;
 
     const render = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      stars.forEach((star) => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-        ctx.fill();
+      const { width, height } = canvas;
+      ctx.clearRect(0, 0, width, height);
 
+      for (let star of stars) {
+        // Update star position
+        star.x += star.xVelocity;
+        star.y += star.yVelocity;
+
+        // If a star goes off-screen on the right or top,
+        // reset it to the left or bottom
+        if (star.x > width) {
+          star.x = 0;
+        }
+        if (star.y < 0) {
+          star.y = height;
+        }
+
+        // Twinkle effect
+        let opacity = star.opacity;
         if (star.twinkleSpeed !== null) {
-          star.opacity =
+          opacity =
             0.5 +
             Math.abs(Math.sin((Date.now() * 0.001) / star.twinkleSpeed) * 0.5);
         }
-      });
+
+        // Draw the star
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.fill();
+      }
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -137,7 +171,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className={cn("h-full w-full absolute inset-0", className)}
+      className={cn(
+        "h-full w-full absolute inset-0 pointer-events-none",
+        className
+      )}
     />
   );
 };

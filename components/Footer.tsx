@@ -4,7 +4,7 @@ import { FaConnectdevelop, FaLink, FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="py-20">
+    <footer id="contact" className="pt-20">
       <h1 className="text-center font-bold text-4xl md:text-5xl">
         Let’s Connect and <br />
         <span className="text-purple-300"> Stay in Touch</span>
@@ -24,9 +24,8 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between w-full py-20">
         <p className="text-sm">Copyright @ 2024 Serdar Bulun</p>
-        <p>Icons</p>
       </div>
     </footer>
   );

@@ -1,21 +1,13 @@
 import React from "react";
-import { StarsBackground } from "./ui/StarsBackground";
 import { TextGenerateEffect } from "./ui/TestGenerateEffect";
 import ShimmerButton from "./ui/ShimmerButton";
 import { FaBriefcase } from "react-icons/fa";
-import { ShootingStars } from "./ui/ShootingStars";
 import Image from "next/image";
+
 const HeroSection = () => {
   return (
-    <div className="pb-20 pt-20">
-      <ShootingStars
-        starWidth={12}
-        starHeight={2}
-        minDelay={2000}
-        maxDelay={4000}
-      />
-      <StarsBackground />
-      <div className="flex justify-center relative my-8 z-10">
+    <div id="home" className="pb-20 pt-20">
+      <div className="flex justify-center my-8">
         <div className="max-w-[90v] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h1 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Dynamic Web Experiences Powered by <br />

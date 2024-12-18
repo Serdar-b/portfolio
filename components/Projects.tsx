@@ -1,11 +1,7 @@
 import React from "react";
 import { PinContainer, PinPerspective } from "./ui/3dPin";
-import { ShootingStars } from "./ui/ShootingStars";
-import { StarsBackground } from "./ui/StarsBackground";
 import { myProjects } from "@/data";
-import { div } from "framer-motion/client";
 import { FaLocationArrow } from "react-icons/fa";
-import { toolBox } from "@/data";
 
 const Projects = () => {
   return (
