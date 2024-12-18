@@ -2,9 +2,8 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import Navigation from "@/components/Navigation";
 import Projects from "@/components/Projects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import { navItems } from "@/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
     overflow-hidden mx-auto sm:px-10 px-5"
     >
       <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
+        <Navigation />
         <HeroSection />
         <Projects />
         <Experience />

@@ -15,6 +15,9 @@ export default {
         "custom-gradient":
           "radial-gradient(circle, #0A1E28 0%, #0A1E28 50%, #000 100%)",
       },
+      container: {
+        center: true,
+      },
       colors: {
         black: {
           DEFAULT: "#000",
