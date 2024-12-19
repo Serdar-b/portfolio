@@ -1,11 +1,11 @@
-import About from "../components/About";
-import Experience from "../components/Experience";
-import Footer from "../components/Footer";
-import HeroSection from "../components/Hero";
-import Navigation from "../components/Navigation";
-import Projects from "../components/Projects";
-import { ShootingStars } from "../components/ui/ShootingStars";
-import { StarsBackground } from "../components/ui/StarsBackground";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/Hero";
+import Navigation from "@/components/Navigation";
+import Projects from "@/components/Projects";
+import { ShootingStars } from "@/components/ui/ShootingStars";
+import { StarsBackground } from "@/components/ui/StarsBackground";
 export default function Home() {
   return (
     <main
