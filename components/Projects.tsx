@@ -1,54 +1,47 @@
 import React from "react";
-import { PinContainer, PinPerspective } from "./ui/3dPin";
-import { myProjects } from "@/data";
+import { PinContainer } from "./ui/3dPin";
+import { myProjects } from "@/data/projects";
 import { FaLocationArrow } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <div className="py-20" id="projects">
-      <h1 className="text-center font-bold text-4xl md:text-5xl">
+    <div className="py-24 relative z-10" id="projects">
+      <h1 className="text-center font-bold text-4xl md:text-5xl mb-12">
         My recent <span className="text-purple-300">Projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+      <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-6 px-6">
         {myProjects.map(({ id, title, description, img, link, stack }) => (
           <div
             key={id}
-            className="sm:h-[35rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw] "
+            className="flex flex-col items-center justify-center w-full max-w-[500px] max-h-[700px] rounded-2xl overflow-hidden"
           >
-            <PinContainer title={link} href={link}>
-              <div
-                className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh]
-              mb-10"
-              >
+            <PinContainer title={link} href={link} className="w-full h-full">
+              <div className="relative w-full max-h-[250px] bg-gray-800 rounded-2xl overflow-hidden">
                 <img
                   src={img}
                   alt={title}
-                  className="z-10 absolute bottom-0 w-full h-full object-contain rounded-3xl"
+                  className="z-10 w-full h-full object-cover rounded-2xl"
                 />
               </div>
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {title}
-              </h1>
-              <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
+              <h1 className="font-bold text-lg mt-4">{title}</h1>
+              <p className="text-sm font-light text-gray-300 my-5">
                 {description}
               </p>
-              <div className="flex items-center justify-between mt-7 mb-3">
+              <div className="flex flex-wrap gap-y-4 items-center justify-between mt-2 w-full">
                 <div className="flex items-center">
                   {stack.map((icon, index) => (
                     <div
                       key={icon}
-                      className="border border-white/[0.3] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{ transform: `translateX(-${5 * index * 2}px)` }}
+                      className="border border-white/[0.3] rounded-full bg-black w-8 h-8 flex justify-center items-center"
+                      style={{ transform: `translateX(-${10 * index}px)` }}
                     >
-                      <img src={icon} alt={icon} className="p-2" />
+                      <img src={icon} alt={icon} className="p-1.5" />
                     </div>
                   ))}
                 </div>
-                <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple-500">
-                    Check Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                <div className="flex items-center justify-between gap-x-2">
+                  <p className="text-sm text-purple-500">Check Live Site</p>
+                  <FaLocationArrow className="ms-2" color="#CBACF9" />
                 </div>
               </div>
             </PinContainer>
