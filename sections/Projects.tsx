@@ -1,5 +1,5 @@
 import React from "react";
-import { PinContainer } from "./ui/3dPin";
+import { PinContainer } from "../components/ui/3dPin";
 import { myProjects } from "@/data/projects";
 import { FaLocationArrow } from "react-icons/fa";
 

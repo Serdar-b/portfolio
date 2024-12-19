@@ -1,10 +1,13 @@
 import React from "react";
-import Card from "./Card";
-import ToolBox from "./ToolBox";
+import Card from "../components/Card";
+import ToolBox from "../components/ToolBox";
 
 const About = () => {
   return (
-    <div id="about" className="flex flex-col items-center justify-center py-20 mb">
+    <div
+      id="about"
+      className="flex flex-col items-center justify-center py-20 mb"
+    >
       <h1 className="text-center font-bold text-4xl md:text-5xl ">
         About <span className="text-purple-300">Me</span>
       </h1>

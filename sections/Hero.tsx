@@ -1,6 +1,6 @@
 import React from "react";
-import { TextGenerateEffect } from "./ui/TestGenerateEffect";
-import ShimmerButton from "./ui/ShimmerButton";
+import { TextGenerateEffect } from "../components/ui/TestGenerateEffect";
+import ShimmerButton from "../components/ui/ShimmerButton";
 import { FaBriefcase } from "react-icons/fa";
 import Image from "next/image";
 
