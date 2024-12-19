@@ -129,7 +129,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       const { width, height } = canvas;
       ctx.clearRect(0, 0, width, height);
 
-      for (let star of stars) {
+      for (const star of stars) {
         // Update star position
         star.x += star.xVelocity;
         star.y += star.yVelocity;

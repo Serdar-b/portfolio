@@ -3,8 +3,6 @@ import React, { Fragment } from "react";
 import Icon from "./Icon";
 
 const ToolBox = ({ itemsClassName }: { itemsClassName?: string }) => {
-  // Define the gradientId variable
-  const gradientId = "gradient";
 
   return (
     <div className="flex mt-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

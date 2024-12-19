@@ -4,13 +4,11 @@ const ShimmerButton = ({
   title,
   icon,
   position,
-  handlePress,
   otherStyles,
 }: {
   title: string;
   icon: React.ReactNode;
   position: string;
-  handlePress?: () => void;
   otherStyles?: string;
 }) => {
   return (
