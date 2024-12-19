@@ -1,9 +1,9 @@
-import About from "../components/sections/About";
-import Experience from "../components/sections/Experience";
-import Footer from "../components/sections/Footer";
-import HeroSection from "../components/sections/Hero";
-import Navigation from "../components/sections/Navigation";
-import Projects from "../components/sections/Projects";
+import About from "../components/About";
+import Experience from "../components/Experience";
+import Footer from "../components/Footer";
+import HeroSection from "../components/Hero";
+import Navigation from "../components/Navigation";
+import Projects from "../components/Projects";
 import { ShootingStars } from "../components/ui/ShootingStars";
 import { StarsBackground } from "../components/ui/StarsBackground";
 export default function Home() {

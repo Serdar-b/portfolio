@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
-import Card from "../Card";
-import ToolBox from "../ToolBox";
-import Hobbies from "../Hobbies";
+import Card from "./Card";
+import ToolBox from "./ToolBox";
+import Hobbies from "./Hobbies";
 
 const About = () => {
   return (

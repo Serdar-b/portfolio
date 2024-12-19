@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import GradientSvg from "../Gradient";
+import GradientSvg from "./Gradient";
 import { clsx } from "clsx";
 import MobileNav from "@/components/MobileNav";
 import DesktopNav from "@/components/DesktopNav";

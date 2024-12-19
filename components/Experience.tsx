@@ -1,6 +1,7 @@
-import { workExperience } from "../../data";
+"use client";
+import { workExperience } from "../data";
 import React from "react";
-import { Button } from "../ui/movingBorder";
+import { Button } from "./ui/movingBorder";
 import Image from "next/image";
 
 const Experience = () => {
@@ -22,8 +23,8 @@ const Experience = () => {
               <Image
                 src={card.thumbnail}
                 alt={card.thumbnail}
-                width={54} 
-                height={54} 
+                width={54}
+                height={54}
                 className="lg:w-18 md:w-14 w-12"
               />
               <div className="lg:ms-5">

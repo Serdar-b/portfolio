@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
-import { TextGenerateEffect } from "../ui/TestGenerateEffect";
-import ShimmerButton from "../ui/ShimmerButton";
+import { TextGenerateEffect } from "./ui/TestGenerateEffect";
+import ShimmerButton from "./ui/ShimmerButton";
 import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 

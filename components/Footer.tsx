@@ -1,7 +1,6 @@
-// Footer.tsx
 "use client";
 import React from "react";
-import ShimmerButton from "../ui/ShimmerButton";
+import ShimmerButton from "./ui/ShimmerButton";
 import { FaEnvelope } from "react-icons/fa6";
 import { socials, Social } from "@/data/social";
 
