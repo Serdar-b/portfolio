@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Card = ({
@@ -20,7 +21,7 @@ const Card = ({
     >
       <div className="flex flex-col px-10 mb-5">
         <div className="flex flex-row items-center justify-start gap-4 pt-4">
-          <img
+          <Image
             src="/icons/gradient-star.svg"
             alt="star"
             height={35}

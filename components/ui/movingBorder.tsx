@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, ComponentType } from "react";
+import React, { ReactNode, ComponentType, ElementType } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -10,10 +10,17 @@ import {
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export function Button({
+// Define a type for the common HTML attributes we want to allow
+type CommonProps = {
+  style?: React.CSSProperties;
+  className?: string;
+  [key: string]: unknown;
+};
+
+export function Button<T extends ElementType = "button">({
   borderRadius = "1.75rem",
   children,
-  as: Component = "button",
+  as,
   containerClassName,
   borderClassName,
   duration,
@@ -22,13 +29,18 @@ export function Button({
 }: {
   borderRadius?: string;
   children: ReactNode;
-  as?: keyof JSX.IntrinsicElements | ComponentType<any>; 
+  as?: T;
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: unknown; 
-}) {
+} & (T extends keyof JSX.IntrinsicElements
+  ? JSX.IntrinsicElements[T]
+  : T extends ComponentType<infer P>
+  ? P
+  : never)) {
+  const Component = (as || "button") as ElementType;
+
   return (
     <Component
       className={cn(
@@ -53,7 +65,6 @@ export function Button({
           />
         </MovingBorder>
       </div>
-
       <div
         className={cn(
           "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
@@ -80,9 +91,8 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: unknown; 
-}) => {
-  const pathRef = useRef<SVGRectElement | null>(null); 
+} & CommonProps) => {
+  const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
@@ -101,7 +111,6 @@ export const MovingBorder = ({
     progress,
     (val) => pathRef.current?.getPointAtLength(val)?.y ?? 0
   );
-
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
   return (
