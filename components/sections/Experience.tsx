@@ -1,6 +1,7 @@
 import { workExperience } from "../../data";
 import React from "react";
 import { Button } from "../ui/movingBorder";
+import Image from "next/image";
 
 const Experience = () => {
   return (
@@ -9,7 +10,7 @@ const Experience = () => {
         My
         <span className="text-purple-300"> Work Experience</span>
       </h1>
-      <div className="w-ful mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
+      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
         {workExperience.map((card) => (
           <Button
             key={card.id}
@@ -18,16 +19,18 @@ const Experience = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-              <img
+              <Image
                 src={card.thumbnail}
                 alt={card.thumbnail}
-                className=" lg:w-18 md:w-14 w-12"
+                width={54} 
+                height={54} 
+                className="lg:w-18 md:w-14 w-12"
               />
               <div className="lg:ms-5">
                 <h1 className="text-start text-xl md:text-2xl font-bold">
                   {card.title}
                 </h1>
-                <p className="text-start text-white-100 mt-3 font-semibold ">
+                <p className="text-start text-white-100 mt-3 font-semibold">
                   {card.desc}
                 </p>
               </div>
