@@ -1,7 +1,7 @@
 import React from "react";
-import { TextGenerateEffect } from "../components/ui/TestGenerateEffect";
-import ShimmerButton from "../components/ui/ShimmerButton";
-import { FaBriefcase } from "react-icons/fa";
+import { TextGenerateEffect } from "../ui/TestGenerateEffect";
+import ShimmerButton from "../ui/ShimmerButton";
+import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 
 const HeroSection = () => {
@@ -19,8 +19,8 @@ const HeroSection = () => {
             words="Bringing Ideas to life with impact"
           />
           <p className="text-center max-w-md md:max-w-md md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl opacity-80">
-            Hi, I&apos;m Serdar, a developer based in Sweden with a passion for
-            turning innovative ideas into reality.
+            Hi, I&apos;m Serdar, a software engineer based in Sweden with a
+            passion for turning innovative ideas into reality.
           </p>
           <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg">
             <Image
@@ -32,10 +32,18 @@ const HeroSection = () => {
             />
           </div>
 
-          <a href="#about">
+          <p className="text-center mt-10 max-w-md md:max-w-md md:tracking-wider text-sm md:text-lg lg:text-xl opacity-80">
+            Connect with me on Linkedin
+          </p>
+
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/serdar-bulun-bb377320a/"
+          >
             <ShimmerButton
-              title="My Work"
-              icon={<FaBriefcase />}
+              title="Connect"
+              icon={<FaLinkedin size={23} />}
               position="right"
             />
           </a>

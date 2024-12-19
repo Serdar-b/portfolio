@@ -31,6 +31,8 @@ export default {
         shimmer: "shimmer 2s linear infinite",
         "move-left-anim": "move-left-anim 1s linear infinite",
         "move-right-anim": "move-right-anim 1s linear infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        "counter-spin": "counter-spin 20s linear infinite",
       },
       keyframes: {
         shimmer: {
@@ -57,10 +59,29 @@ export default {
             transform: "translateX(-50%) ",
           },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "counter-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
       },
     },
+    variants: {
+      animation: ["hover", "group-safe"],
+    },
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors,
+    function({ addUtilities }: { addUtilities: any }) {
+      addUtilities({
+        '.animation-pause': {
+          'animation-play-state': 'paused',
+        },
+      })
+    }
+  ],
 } satisfies Config;
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

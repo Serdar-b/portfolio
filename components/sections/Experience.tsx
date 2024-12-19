@@ -1,11 +1,11 @@
-import { workExperience } from "@/data";
+import { workExperience } from "../../data";
 import React from "react";
-import { Button } from "../components/ui/movingBorder";
+import { Button } from "../ui/movingBorder";
 
 const Experience = () => {
   return (
     <div className="py-20" id="experiences">
-      <h1 className="text-center font-bold text-4xl md:text-5xl">
+      <h1 className="text-center font-bold text-4xl md:text-5xl pb-20">
         My
         <span className="text-purple-300"> Work Experience</span>
       </h1>

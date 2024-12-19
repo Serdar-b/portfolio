@@ -135,7 +135,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
         star.y += star.yVelocity;
 
         // If a star goes off-screen on the right or top,
-        // reset it to the left or bottom
+        // reset to the left or bottom
         if (star.x > width) {
           star.x = 0;
         }

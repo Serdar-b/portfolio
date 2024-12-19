@@ -1,12 +1,12 @@
 import React from "react";
-import { PinContainer } from "../components/ui/3dPin";
+import { PinContainer } from "../ui/3dPin";
 import { myProjects } from "@/data/projects";
 import { FaLocationArrow } from "react-icons/fa";
 
 const Projects = () => {
   return (
     <div className="py-24 relative z-10" id="projects">
-      <h1 className="text-center font-bold text-4xl md:text-5xl mb-12">
+      <h1 className="text-center font-bold text-4xl md:text-5xl pb-20">
         My recent <span className="text-purple-300">Projects</span>
       </h1>
       <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-6 px-6">

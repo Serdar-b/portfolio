@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Host_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const hostGrotesk = Host_Grotesk({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700']
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${hostGrotesk.className} antialiased`}
+        className={`${plusJakarta.className} antialiased`}
       >
         {children}
       </body>
