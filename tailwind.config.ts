@@ -31,7 +31,7 @@ export default {
         "move-left-anim": "move-left-anim 1s linear infinite",
         "move-right-anim": "move-right-anim 1s linear infinite",
         "spin-slow": "spin-slow 20s linear infinite",
-        "counter-spin": "counter-spin 20s linear infinite",
+        "counter-spin": "counter-spin 20s linear infinite", 
       },
       keyframes: {
         shimmer: {
