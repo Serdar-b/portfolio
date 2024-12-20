@@ -17,7 +17,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`flex flex-col ${cardClasses} outline outline-2 outline-white/10 rounded-lg bg-gray-500/10 mt-10 max-w-[400px] sm:max-w-[600px]`}
+      className={`flex flex-col ${cardClasses} outline outline-2 outline-white/10 rounded-lg bg-gray-500/10 mt-10 max-w-[330px] sm:max-w-[600px]`}
     >
       <div className="flex flex-col px-10 mb-5">
         <div className="flex flex-row items-center justify-start gap-4 pt-4">
