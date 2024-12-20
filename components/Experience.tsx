@@ -21,7 +21,7 @@ const Experience = () => {
             {/* Card */}
             <Button
               borderRadius="1.75rem"
-              className="flex-1 text-white border-neutral-200 dark:border-slate-800 p-3"
+              className="flex-1 text-white border-neutral-200 border-slate-800 p-3"
               duration={Math.floor(Math.random() * 10000) + 10000}
             >
               <div className="flex items-center md:flex-row flex-col md:items-center p-3 py-6 md:p-5 lg:p-4 gap-2">
